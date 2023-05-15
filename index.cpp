@@ -21,15 +21,15 @@ bool isEmpty(){
 	}
 }
 
-void enqueue(){
+void insert(){
 	if(!isFull()){
-		cout<<"masukan data :";
+		cout<<"Masukkan data: ";
 		cin>>data[top];
 		top++;
 	}
 }
 
-void dequeue(){
+void Delete(){
 	if(!isEmpty()){
 		for(int a = 0; a<top-1; a++){
 			data[a] = data[a+1];
@@ -40,45 +40,44 @@ void dequeue(){
 
 void clear(){
 	top = 0;
-	if(top == 0){
-		cout<<"data sudah di clear";
-	}
+	cout << "Antrian telah dikosongkan." << endl;
 }
+
 void view(){
 	if(!isEmpty()){
-		cout<<"data Antrian :"<<endl;
+		cout<<"Data Antrian:"<<endl;
 		for(int a = top-1; a>=0; a--){
 			cout<<a+1<<". "<<data[a]<<endl;
 		}
 	}else{
-		cout<<"antrian kosong"<<endl;
+		cout<<"Antrian kosong"<<endl;
 	}
 	if(isFull()){
-		cout<<"antrian penuh"<<endl;
+		cout<<"Antrian penuh"<<endl;
 	}
 	cout<<endl;
 }
-
 
 int main(){
 	int pil;
 	que :
 		system("cls");
 		view();
-		cout<<"=======menu utama===="<<endl;
-		cout<<"1.Enqueque"<<endl;
-		cout<<"2.Dequeue"<<endl;
-		cout<<"3.Clear"<<endl;
-		cout<<"pilih :";
+		cout<<"=======Menu Utama===="<<endl;
+		cout<<"1. Insert"<<endl;
+		cout<<"2. Delete"<<endl;
+		cout<<"3. Clear"<<endl;
+		cout<<"Pilih: ";
 		cin>>pil;
 		
 		if(pil == 1){
-			enqueue();	
+			insert();	
 			goto que;
 		}else if(pil == 2){
-			dequeue();
+			Delete();
 			goto que;
 		}else if(pil == 3){
 			clear();
 		}
+	return 0;
 }
